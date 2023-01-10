@@ -1,0 +1,5 @@
+*.bkp
+*.dtmp
+*.class
+*.ctxt
+.DS_Store
