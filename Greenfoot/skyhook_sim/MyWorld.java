@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     Skyhook1 skyhook1;
-    Skyhook2 skyhhok2;
+    Skyhook2 skyhook2;
     
     /**
      * Constructor for objects of class MyWorld.
@@ -43,10 +43,10 @@ public class MyWorld extends World
         skyhook1.setLocation(502,208);
         skyhook1.turn(30);
         //actor skyhook2
-        skyhhok2 = new Skyhook2();
-        addObject(skyhhok2,80,170);
-        skyhhok2.setLocation(80,170);
-        skyhhok2.turn(-32);
+        skyhook2 = new Skyhook2();
+        addObject(skyhook2,80,170);
+        skyhook2.setLocation(80,170);
+        skyhook2.turn(-32);
         //actor graber1
         Graber1 graber1 = new Graber1();
         addObject(graber1,505,263);        

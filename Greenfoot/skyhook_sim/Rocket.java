@@ -23,6 +23,8 @@ public class Rocket extends Actor
     {
         attachGraber1();
         attachGraber2();
+        landMars();
+        landEarth();
     }
     public void attachGraber2()
     {
@@ -66,5 +68,14 @@ public class Rocket extends Actor
                 Skyhook2.hook2 = false;
             }
         }
-    }    
+    }
+    public void landMars()
+    {
+        
+    }
+    public void landEarth()
+    {
+        
+    }
 }
+
