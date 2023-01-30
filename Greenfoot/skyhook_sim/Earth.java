@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Earth extends Planets
 {
-    static boolean blue = false;
+    static boolean planetEarth = false;
     /**
      * Act - do whatever the earth wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
