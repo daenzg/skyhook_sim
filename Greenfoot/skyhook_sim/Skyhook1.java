@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Skyhook1 extends Skyhook
 {
-    static boolean hook1 = true;
+    static boolean hook1 = false;
     /**
      * Act - do whatever the skyhook1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

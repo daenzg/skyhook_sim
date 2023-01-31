@@ -30,7 +30,8 @@ public class AddButton extends Actor
         if (Greenfoot.mousePressed(this))
         {
             Rocket rocket = new Rocket();
-            getWorld().addObject(rocket,472, 315);
+            getWorld().addObject(rocket,554, 316);
+            Skyhook1.hook1 = true;
         }
     }
 }
