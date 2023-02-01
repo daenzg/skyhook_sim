@@ -21,7 +21,6 @@ public class AddButton extends Actor
         
         
     }
-    
     public void act()
     {
         MouseClick();    
