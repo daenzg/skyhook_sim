@@ -1,13 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Die Rackete wird von der Erde aus gestartet bewegt sich mittels den Skyhooks zwischen 
- * der Erde und dem Mars.
+ * Das UFO wird vom Mars aus gestartet bewegt sich mittels den Skyhooks zwischen dem Mars und 
+ * der Erde. Die Aliens sind fortschrittlicher als die Menschen, deshalb verfügt das UFO über
+ * eine Ausweichfunktion, damit es nicht mit der Rackete kollidiert.
  * 
  * @author (Daniel Furrer, Marc Geiger, Sebastian Müller) 
  * @version (01.02.2023)
  */
-public class Rocket extends Actor
+public class Ufo extends Actor
 {
     private int timeMars = 0;
     private int timeEarth = 0;
@@ -15,7 +16,7 @@ public class Rocket extends Actor
      * Act - do whatever the rocket wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Rocket()
+    public Ufo()
     {
         GreenfootImage image = getImage();
         image.scale(image.getWidth()/15, image.getHeight()/15);
@@ -24,6 +25,7 @@ public class Rocket extends Actor
     
     public void act()
     {
+        collisionCheck();
         attachGraber1();
         attachGraber2();
         landMars();
@@ -31,21 +33,21 @@ public class Rocket extends Actor
     }
     public void attachGraber2()
     {
-        if (Skyhook1.hook1 == true)
+        if (Skyhook1.ufohook1 == true)
         {
-            java.util.List actors = getWorld().getObjects(Graber1.class);
+           java.util.List actors = getWorld().getObjects(Graber1.class);
             
            if (! actors.isEmpty())
            {
                 Actor actor = (Actor)actors.get(0);
                 turnTowards(actor.getX(), actor.getY());
-                move(3);
-                setRotation(90); // to maintain upright actor
+                move(4);
+                setRotation(0); // to maintain upright actor
            }
-           if (getX() >= 490 && getY() >= 145 && getX() <= 505 && getY() <= 167)
+           if (getX() >= 500 && getY() >= 145 && getX() <= 505 && getY() <= 155)
            {
-               Skyhook1.hook1 = false;
-               Skyhook2.hook2 = true;
+               Skyhook1.ufohook1 = false;
+               Skyhook2.ufohook2 = true;
                
                // decrease speed of skyhook1 and graber1
                Skyhook1 objHook1 = (Skyhook1)getWorld().getObjects(Skyhook1.class).get(0);
@@ -60,7 +62,7 @@ public class Rocket extends Actor
     }
     public void attachGraber1()
     {
-        if (Skyhook2.hook2 == true)
+        if (Skyhook2.ufohook2 == true)
         {
             java.util.List actors = getWorld().getObjects(Graber2.class);
             
@@ -68,14 +70,14 @@ public class Rocket extends Actor
             {
                 Actor actor = (Actor)actors.get(0);
                 turnTowards(actor.getX(), actor.getY());
-                move(3);
-                setRotation(270); // to maintain upright actor
+                move(4);
+                setRotation(360); // to maintain upright actor
             }
         
             if (getX() <= 95 && getY() <= 227 && getX() >= 87 && getY() >= 205)
             {
-               Skyhook1.hook1 = true;
-               Skyhook2.hook2 = false;
+               Skyhook1.ufohook1 = true;
+               Skyhook2.ufohook2 = false;
                 
                // decrease speed of skyhook2 and graber2
                Skyhook2 objHook2 = (Skyhook2)getWorld().getObjects(Skyhook2.class).get(0);
@@ -94,7 +96,7 @@ public class Rocket extends Actor
         {
             if (timeMars == 0)
             {
-                Skyhook2.hook2 = true;
+                Skyhook2.ufohook2 = true;
             }
             else
             {
@@ -106,7 +108,7 @@ public class Rocket extends Actor
         if (getX() >= 46 && getY() <= 123 && getX() <= 70 && getY() >= 59)
         {
             timeMars = 10;
-            Skyhook2.hook2 = false;
+            Skyhook2.ufohook2 = false;
             int speed = 5;
             turnTowards(70,60);
             move(speed);
@@ -127,7 +129,7 @@ public class Rocket extends Actor
         {
             if (timeEarth == 0)
             {
-                Skyhook1.hook1 = true;
+                Skyhook1.ufohook1 = true;
             }
             else
             {
@@ -139,7 +141,7 @@ public class Rocket extends Actor
         if (getX() >= 460 && getY() >= 247 && getX() <= 513 && getY() <= 315)
         {
             timeEarth = 10;
-            Skyhook1.hook1 = false;
+            Skyhook1.ufohook1 = false;
             int speed = 5;
             turnTowards(515,320);
             move(speed);
@@ -151,6 +153,19 @@ public class Rocket extends Actor
             objHook1.rotationalSpeedHook1 = -2;
             objRotation1.rotationalSpeedGraber1 = -2;
             objRadius1.radiusGraber1 = 2;
+        }
+    }
+    public void collisionCheck()
+    {
+        Rocket objRocket = (Rocket)getOneIntersectingObject(Rocket.class);
+        if (objRocket != null)
+        {
+            double radius = 30;
+            double angle = 2 * Math.PI * Math.random();
+            int x = (int)(getX() + radius * Math.cos(angle));
+            int y = (int)(getY() + radius * Math.sin(angle));
+            setLocation(x, y);
+            return;
         }
     }
 }

@@ -1,10 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * In dieser Simulation wird das Prinzip des Skyhooks dargestllt.
+ * Dieser befördert Racketen, Raumschiffe, usw. ins All und hilft bei der
+ * Landung, damit Treibstoffe gespart werden kann. 
+ * Wenn ein Raumschiff ins All geschleudert wird verliert der Skyhook energie 
+ * und verlangsamt sich, da er seine Energie auf das Raumschiff überträgt. 
+ * Bei der Landung wird die Energie der zum bsp. Rackete auf den Skyhook 
+ * übertragen, damit das Raumschiff nicht mit voller Geschwindigkeit in die
+ * Athmosphäre eintritt. 
+ * Mit den zwei
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Daniel Furrer, Marc Geiger, Sebastian Müller) 
+ * @version (01.02.2023)
  */
 public class MyWorld extends World
 {
@@ -50,7 +58,7 @@ public class MyWorld extends World
         //actor graber1
         Graber1 graber1 = new Graber1();
         addObject(graber1,505,263);        
-        graber1.setLocation( 505,263);
+        graber1.setLocation(505,263);
         //actor graber2
         Graber2 graber2 = new Graber2();
         addObject(graber2,85,225);
@@ -59,9 +67,10 @@ public class MyWorld extends World
         AddButton addbutton = new AddButton();
         addObject(addbutton,39,359);
         addbutton.setLocation(39,359);
-        //actor rocket
-        //Rocket rocket = new Rocket();
-        //addObject(rocket, 472, 315);
-        //rocket.setLocation(472, 315);
+        //actor ufobutton
+        UfoButton ufobutton = new UfoButton();
+        addObject(ufobutton, 117, 359);
+        ufobutton.setLocation(117, 359);
+        //actor punkt
     }
 }

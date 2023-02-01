@@ -1,13 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class graber2 here.
+ * Dies ist die Andockstelle für die Raumschiffe am Skyhook des Marses.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Daniel Furrer, Marc Geiger, Sebastian Müller) 
+ * @version (01.02.2023)
  */
 public class Graber2 extends Skyhook2
 {
+    public int rotationalSpeedGraber2 = 2;
+    public int radiusGraber2 = -2;
     /**
      * Act - do whatever the graber2 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -18,10 +20,7 @@ public class Graber2 extends Skyhook2
     }
     public void orbitMars()
     {
-        int rotationalSpeed = 2;
-        int radius = -2;
-        
-        turn(rotationalSpeed);
-        move(radius);
+        turn(rotationalSpeedGraber2);
+        move(radiusGraber2);
     } 
 }

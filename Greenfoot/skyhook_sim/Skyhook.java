@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class skyhooks here.
+ * Dies ist eine Überklasse der beiden Skyhooks. Hier wird ledigtlich die Grösse des Bildes in
+ * der Simulation bestimmt, da die Skyhooks nicht unterschiedlich gross sein sollten.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Daniel Furrer, Marc Geiger, Sebastian Müller) 
+ * @version (01.02.2023)
  */
 public class Skyhook extends Actor
 {
@@ -22,6 +23,6 @@ public class Skyhook extends Actor
     
     public void act()
     {
-        // Add your action code here.
+        
     }
 }

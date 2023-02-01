@@ -1,22 +1,22 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Kreiert die Rackete in der Simulation auf der Erde. Der Knopf kann nur eimal gedrückt werden.
+ * Kreiert das UFO in der Simulation auf dem Mars. Der Knopf kann nur eimal gedrückt werden.
  * 
  * @author (Daniel Furrer, Marc Geiger, Sebastian Müller) 
  * @version (01.02.2023)
  */
-public class AddButton extends Actor
+public class UfoButton extends Actor
 {
     private boolean clicked = false;
     /**
      * Act - do whatever the AddButton wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public AddButton()
+    public UfoButton()
     {
         GreenfootImage image = getImage();
-        image.scale(image.getWidth()/3, image.getHeight()/3);
+        image.scale(image.getWidth()/4, image.getHeight()/4);
         setImage(image);
         
         
@@ -31,9 +31,9 @@ public class AddButton extends Actor
         if (Greenfoot.mousePressed(this) && !clicked)
         {
             clicked = true;
-            Rocket rocket = new Rocket();
-            getWorld().addObject(rocket,554, 316);
-            Skyhook1.hook1 = true;
+            Ufo ufo = new Ufo();
+            getWorld().addObject(ufo,27, 61);
+            Skyhook2.ufohook2 = true;
         }
     }
 }
