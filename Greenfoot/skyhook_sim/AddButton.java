@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
 /**
  * Kreiert die Rackete in der Simulation auf der Erde. Der Knopf kann nur eimal gedrückt werden.
@@ -6,6 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (Daniel Furrer, Marc Geiger, Sebastian Müller) 
  * @version (01.02.2023)
  */
+
 public class AddButton extends Actor
 {
     private boolean clicked = false;
@@ -13,22 +14,17 @@ public class AddButton extends Actor
      * Act - do whatever the AddButton wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public AddButton()
-    {
+    public AddButton() { // Cunstructor
         GreenfootImage image = getImage();
         image.scale(image.getWidth()/3, image.getHeight()/3);
-        setImage(image);
-        
-        
-    }
-    public void act()
-    {
+        setImage(image); 
+        }
+    
+    public void act() {
         MouseClick();    
     }
-    public void MouseClick()
-    {
-        if (Greenfoot.mousePressed(this) && !clicked)
-        {
+    public void MouseClick() { // Check if cursor clicks on button
+        if (Greenfoot.mousePressed(this) && !clicked) {
             clicked = true;
             Rocket rocket = new Rocket();
             getWorld().addObject(rocket,554, 316);

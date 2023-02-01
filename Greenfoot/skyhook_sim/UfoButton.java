@@ -18,8 +18,6 @@ public class UfoButton extends Actor
         GreenfootImage image = getImage();
         image.scale(image.getWidth()/4, image.getHeight()/4);
         setImage(image);
-        
-        
     }
     
     public void act()
