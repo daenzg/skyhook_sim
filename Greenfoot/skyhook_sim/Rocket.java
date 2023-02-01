@@ -84,7 +84,7 @@ public class Rocket extends Actor
             if (timeMars == 0)
             {
                 Skyhook2.hook2 = true;
-                
+
             }
             else
             {
